@@ -1,0 +1,417 @@
+
+        :root {
+            /* Colores */
+            --primary-subdued: hsl(254, 88%, 90%); /* Morado claro */
+            --primary-base: hsl(256, 67%, 59%); /* Morado base */
+            --accent-subdued: hsl(31, 66%, 93%); /* Naranja claro */
+            --accent-base: hsl(39, 100%, 71%); /* Naranja/Amarillo base */
+            --white: hsl(0, 0%, 100%);
+            --off-white: hsl(0, 0%, 96%);
+            --black: hsl(0, 0%, 7%);
+            /* Tamaños de Fuente */
+            --fs-reg: 1.25rem;
+            --fs-md: 2.25rem;
+            --fs-lg: 3rem;
+            --fs-xl: 4rem;
+            /* Estilos de Tarjeta Base */
+            --bento-card-padding: 24px; /* reducido para cajitas más pequeñas */
+            --bento-card-border-radius: 18px;
+            --bento-card-gap: 20px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        h1, h2, h3, h4, h5, h6, p, ul, ol, figure { margin: 0; }
+        h1, h2, h3, h4, h5, h6 { font-weight: 500; }
+        img { max-width: 100%; display: block; border-radius: 0.75rem; } /* Añadido border-radius */
+        
+        html {
+            font-family: "DM Sans", "Inter", sans-serif;
+            line-height: 1.3;
+        }
+        
+        body {
+            margin: 32px;
+            color: var(--black);
+            font-size: var(--fs-reg);
+            background: var(--off-white);
+            min-height: 100vh;
+        }
+
+        h1, h2 {
+            color: var(--heading-foreground, inherit);
+            font-size: var(--heading-font-size, var(--fs-md));
+            line-height: 1.1;
+            text-wrap: balance;
+        }
+        /* La anidación de 'span' se convierte a CSS plano para compatibilidad máxima */
+        h1 span, h2 span {
+            display: var(--heading-span-display, inline);
+            color: var(--heading-span-foreground, var(--black));
+            font-size: var(--heading-span-font-size, inherit);
+            font-style: var(--heading-span-style, normal);
+        }
+
+        /* Estilo de Tarjeta Base (similar a .bento-grid>*) */
+        .parent > div {
+            color: var(--bento-card-foreground, var(--black));
+            background-color: var(--bento-card-surface, var(--white));
+            padding: var(--bento-card-padding, 32px);
+            border-radius: var(--bento-card-border-radius, 21px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            overflow: hidden;
+            
+            /* Ajustes para el contenido interno de la tarjeta */
+            display: flex;
+            flex-direction: column;
+            gap: var(--bento-card-gap, 32px);
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* dejar que las filas se adapten al contenido para evitar cajas alargadas */
+            grid-auto-rows: auto;
+            gap: 20px; /* ligeramente reducido */
+            max-width: 1200px; /* más estrecho */
+            width: 90%;
+            margin: 0 auto;
+        }
+            
+        .div5 {
+            grid-row: span 4 / span 4;
+        }
+
+        .div7 {
+            grid-row: span 3 / span 3;
+            grid-column-start: 2;
+            grid-row-start: 4;
+        }
+
+        .div8 {
+            grid-row: span 3 / span 3;
+            grid-column-start: 2;
+            grid-row-start: 7;
+        }
+
+        .div9 {
+            grid-row: span 5 / span 5;
+            grid-column-start: 1;
+            grid-row-start: 5;
+        }
+
+        .div10 {
+            grid-column: span 2 / span 2;
+            grid-row: span 3 / span 3;
+            grid-column-start: 2;
+            grid-row-start: 1;
+            align-items: center; /* Centrar contenido para el título principal */
+            text-align: center;
+        }
+
+        .div11 {
+            grid-row: span 3 / span 3;
+            grid-column-start: 3;
+            grid-row-start: 4;
+        }
+
+        .div12 {
+            grid-column: span 2 / span 2;
+            grid-row: span 3 / span 3;
+            grid-column-start: 3;
+            grid-row-start: 7;
+            align-items: center; /* Centrar elementos internos */
+            text-align: center;
+        }
+
+        .div13 {
+            grid-row: span 6 / span 6;
+            grid-column-start: 4;
+            grid-row-start: 1;
+        }
+        
+        /* Div 10: Título principal (Morado) */
+        .div10 {
+            --heading-font-size: var(--fs-xl);
+            --heading-span-foreground: var(--accent-base);
+            --bento-card-foreground: var(--white);
+            --bento-card-surface: var(--primary-base);
+            --bento-card-padding: 48px;
+        }
+        .div10 img {
+            max-width: 200px; /* Ajuste para el ícono de estrellas */
+        }
+        .div10 p {
+            font-size: var(--fs-reg);
+            margin-top: -16px;
+            text-align: center;
+            width: 100%;
+            align-self: center;
+        }
+        
+        /* Div 5: Crear y programar (Naranja/Amarillo claro) */
+        .div5 {
+            --bento-card-surface: var(--accent-subdued);
+            --bento-card-gap: 16px;
+            /* Alineación visual de la imagen en la esquina (simulada con flex) */
+            align-items: flex-start;
+        }
+        .div5 h2 {
+            --heading-font-size: var(--fs-lg);
+            --heading-span-foreground: var(--accent-base);
+            margin-bottom: 16px;
+        }
+        .div5 img {
+            /* bajar la imagen un poco */
+            margin-top: 28px;
+            width: 150px;
+        }
+
+        /* Div 9: Contenido AI (Naranja/Amarillo base) */
+        .div9 {
+            --bento-card-surface: var(--accent-base);
+            --bento-card-gap: 16px;
+            align-items: flex-start;
+        }
+        .div9 h2 {
+             --heading-font-size: var(--fs-lg);
+        }
+        .div9 img {
+            margin-top: 30px; /* bajar un poco */
+            align-self: center;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        /* Div 13: Programar en redes (Morado claro) */
+        .div13 {
+            --bento-card-surface: var(--primary-subdued);
+            --bento-card-gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+        .div13 h2 {
+            --heading-font-size: var(--fs-lg);
+        }
+        .div13 img {
+            /* evitar que la imagen fuerce la altura del contenedor: limitar altura y usar transform para alargar visualmente */
+            width: 100%;
+            max-width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            margin-top: 18px; /* bajarla un poco */
+            display: block;
+        }
+
+        /* Div 7: Múltiples cuentas (Blanco) */
+        .div7 {
+            --bento-card-gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+        .div7 img {
+            /* será más grande y colocada arriba (see reorder below) */
+            width: 220px;
+            max-width: 60%;
+            margin-top: 8px;
+        }
+
+        /* Div 11: Horario consistente (Naranja/Amarillo base) */
+        .div11 {
+            --bento-card-surface: var(--accent-base);
+            --bento-card-gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+        .div11 img {
+            width: 150px;
+        }
+
+        /* Div 8: Crecimiento de audiencia (Blanco) */
+        .div8 {
+            --bento-card-gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+        .div8 h2 {
+            --heading-font-size: var(--fs-lg);
+            --heading-span-foreground: var(--primary-base);
+        }
+        .div8 img {
+            width: 100%;
+            max-width: 250px;
+        }
+
+        /* Div 12: Crecer seguidores (Morado) */
+        .div12 {
+            --bento-card-surface: var(--primary-base);
+            --bento-card-foreground: var(--white);
+            --bento-card-gap: 16px;
+        }
+        .div12 h2 {
+            --heading-font-size: var(--fs-md);
+        }
+        .div12 img {
+            width: 45%;
+            max-width: 260px;
+            margin: 0;
+        }
+
+        /* Reglas adicionales: centrar imágenes y texto en los bloques solicitados (por defecto column) */
+        .div5, .div10, .div13, .div11, .div7, .div12 {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* centra horizontalmente */
+            justify-content: center; /* centra verticalmente dentro de la tarjeta */
+            text-align: center;
+        }
+
+        .div5 img, .div10 img, .div13 img, .div11 img, .div7 img, .div12 img {
+            margin: 0 auto; /* asegura centramiento en casos de display block */
+            display: block;
+            height: auto;
+        }
+
+        /* Ajustes específicos para conservar proporciones y no ocupar demasiado espacio */
+    .div5 img { max-width: 220px; }
+    .div10 img { max-width: 220px; }
+    .div13 img { max-width: 520px; }
+    .div11 img { max-width: 180px; }
+    .div7 img { max-width: 260px; }
+    .div12 img { max-width: 260px; }
+
+    /* Asegurar que el párrafo dentro de div10 quede centrado */
+    .div10 p { text-align: center; margin: 8px 0 0; width:100%; align-self:center; }
+
+        /* ---- Overwrites para posicionamiento solicitado (desktop-first) ---- */
+        /* Div12: imagen a la izquierda, texto a la derecha (en pantallas grandes)
+           En pantallas más pequeñas el media query existente vuelve a centrar */
+        .div12 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            gap: 20px;
+        }
+        .div12 img { order: -1; }
+        .div12 h2 { order: 1; }
+
+        /* Div5: bajar la imagen un poco */
+        .div5 img {
+            margin-top: 28px; /* empuja la imagen hacia abajo */
+            max-width: 220px;
+        }
+
+        /* Div9: bajar la imagen un poco */
+        .div9 img {
+            margin-top: 30px;
+            max-width: 280px;
+        }
+
+        /* Div13: alargar la imagen (ligeramente más ancha) y bajarla un poco */
+        .div13 img {
+            width: 100%;
+            max-width: 520px; /* más ancha */
+            margin-top: 20px;
+        }
+
+        /* Div7: la imagen irá arriba (order) y será más grande */
+        .div7 img {
+            order: -1; /* colocar imagen arriba */
+            margin-bottom: 12px; /* separación con el texto */
+            max-width: 260px;
+            width: auto;
+        }
+
+        /* Ajustes específicos para escritorio (garantizar layout en filas) */
+        @media (min-width: 961px) {
+            /* Div12: dividir la caja en dos columnas: imagen izquierda, texto derecha */
+            .div12 {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                text-align: left;
+                gap: 24px;
+            }
+            .div12 img {
+                order: 0;
+                flex: 0 0 48%;
+                width: 100%;
+                max-width: 420px;
+                margin: 0;
+            }
+            .div12 h2 {
+                order: 1;
+                flex: 1 0 48%;
+            }
+
+            /* Div13: alargar más la imagen y bajar el texto más */
+            .div13 img {
+                width: 130%;
+                max-width: 900px;
+                margin-top: 28px;
+            }
+            .div13 p {
+                margin-top: 36px; /* bajar el párrafo más */
+            }
+
+            /* Div5 y Div9: mantener ligeramente más abajo las imágenes, hay margen ya aplicado */
+            .div5 img { margin-top: 32px; }
+            .div9 img { margin-top: 36px; }
+
+            /* Div7: imagen arriba — ya configurado; asegurar separación */
+            .div7 img { margin-bottom: 18px; }
+        }
+
+        /* En pantallas pequeñas (<=960px) revertir .div12 a columna (imagen encima del texto) */
+        @media (max-width: 960px) {
+            .div12 { flex-direction: column; align-items: center; text-align: center; }
+            .div12 img { order: 0; width: 70%; max-width: 300px; }
+            .div12 h2 { order: 1; }
+        }
+
+
+
+        /* Media Query: Asegura que el layout de cuadrícula 4x9 solo se aplica en pantallas grandes */
+        @media (max-width: 1200px) {
+            .parent {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                gap: 16px;
+            }
+            /* Resetear posiciones para un layout responsive más simple */
+            .parent > div {
+                grid-row: auto;
+                grid-column: span 1;
+                grid-row-start: auto;
+                grid-column-start: auto;
+                align-items: flex-start;
+                text-align: left;
+            }
+            .div10, .div12 {
+                 grid-column: span 2; /* Estos serán más anchos en tablets */
+                 align-items: center;
+                 text-align: center;
+            }
+            .div10 h1, .div5 h2, .div9 h2, .div13 h2, .div8 h2 {
+                --heading-font-size: var(--fs-md);
+            }
+        }
+        
+        /* Media Query: Para móviles */
+        @media (max-width: 600px) {
+            body { margin: 16px; }
+            .parent {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .parent > div {
+                 grid-column: span 1;
+            }
+            .div10 h1 {
+                 --heading-font-size: var(--fs-lg);
+            }
+        }
