@@ -208,9 +208,24 @@ nav {
 }
 
 .about h2 {
-  font-size: var(--size-h2);
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-section-title);
+  font-weight: 100;
   margin-bottom: 2rem;
+  padding-top: 2rem;
   color: var(--primary-secciones-1);
+  position: relative;
+  text-align: left;
+}
+
+.about h2::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background-color: #00bcd4;
+  top: 0;
+  left: 0;
 }
 
 .about p {
@@ -312,15 +327,35 @@ nav {
 
 
 .testimonials {
-  background-color: var(--secondary-secciones-2);
+  background-color: var(--primary-secciones-1);
   padding: 4rem 2rem;
-  text-align: center;
+  text-align: left;
+}
+
+.testimonials .testimonials-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .testimonials h3 {
-  font-size: var(--size-h3);
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-section-title);
+  font-weight: 100;
   margin-bottom: 3rem;
-  color: var(--primary-secciones-1);
+  color: var(--text-on-dark);
+  padding-top: 2rem;
+  position: relative;
+}
+
+.testimonials h3::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background-color: #00bcd4;
+  top: 0;
+  left: 0;
 }
 
 .testimonials-container {
@@ -329,12 +364,13 @@ nav {
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 blockquote {
-  background: var(--basics-white);
-  padding: 2rem;
-  border-radius: var(--radius-button-radius);
+  background: #f1f0ea;
+  padding: 3rem 2rem;
+  border-radius: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -344,7 +380,7 @@ blockquote p {
 }
 
 blockquote footer {
-  color: var(--auxiliary-acentos-1);
+  color: var(--text-primary);
   font-weight: bold;
 }
 
@@ -357,13 +393,14 @@ blockquote footer {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(1, 1fr);
   position: relative;
-
+  color: var(--text-primary);
 }
 
 .team-left {
   grid-column: 1 / 4;
   grid-row: 1 / 2;
-
+  text-align: left;
+  color: var(--text-primary);
 }
 
 .team-right {
@@ -371,20 +408,25 @@ blockquote footer {
   grid-row: 1;
 }
 
-.blue-square-team {
-  position: absolute;
-  width: 40px;
-  height: 5px;
-  background-color: var(--background-square-separation);
-  margin-bottom: 8px;
-  top: 60px;
-}
-
 .title-team {
   font-family: var(--font-family-title);
   font-size: var(--font-size-section-title);
   font-weight: 100;
   padding-bottom: var(--padding-sections-big);
+  padding-top: 2rem;
+  position: relative;
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.title-team::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background-color: #00bcd4;
+  top: 0;
+  left: 0;
 }
 
 .box-blue {
@@ -455,12 +497,28 @@ blockquote footer {
   max-width: 1000px;
   margin: 4rem auto;
   padding: 2rem;
+  position: relative;
 }
 
 .consulta-gratuita__titulo {
-  font-size: var(--size-h3);
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-section-title);
+  font-weight: 100;
   margin-bottom: 1.5rem;
   color: var(--primary-secciones-1);
+  padding-top: 2rem;
+  position: relative;
+  text-align: left;
+}
+
+.consulta-gratuita__titulo::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background-color: #00bcd4;
+  top: 0;
+  left: 0;
 }
 
 .consulta-gratuita__descripcion {
@@ -506,18 +564,19 @@ blockquote footer {
 .boton-enviar {
   grid-column: 1 / -1;
   justify-self: end;
-  background-color: var(--auxiliary-acentos-1);
-  color: white;
+  background-color: transparent;
+  color: var(--primary-secciones-1);
   padding: 0.8rem 2.5rem;
-  border: none;
+  border: 2px solid var(--primary-secciones-1);
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .boton-enviar:hover {
-  background-color: #a84d20;
+  background-color: var(--primary-secciones-1);
+  color: white;
 }
 
 
@@ -846,7 +905,7 @@ blockquote footer {
   .team-left {
     grid-column: 1;
     grid-row: 1;
-    text-align: center;
+    text-align: left;
   }
 
   .team-right {
@@ -854,15 +913,14 @@ blockquote footer {
     grid-row: 2;
   }
 
-  .blue-square-team {
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-  }
-
   .title-team {
     font-size: var(--font-size-section-title);
     padding-top: 2rem;
+  }
+
+  .title-team::before {
+    left: 0;
+    transform: none;
   }
 
   .btn-secondary {
