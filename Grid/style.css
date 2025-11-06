@@ -403,10 +403,12 @@
         
         /* Media Query: Para móviles */
         @media (max-width: 600px) {
-            body { margin: 16px; }
+            body { margin: 12px; }
             .parent {
                 grid-template-columns: 1fr;
                 gap: 12px;
+                width: 100%;
+                margin: 0;
             }
             .parent > div {
                  grid-column: span 1;
