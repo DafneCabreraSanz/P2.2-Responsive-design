@@ -28,7 +28,7 @@ body {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 0;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .top-bar {
@@ -74,7 +74,7 @@ body {
   --size-h1: 3.4375rem;
   /* string */
   --weight-parrafo: 400;
-/* Borders-SIzes */
+  /* Borders-SIzes */
   --radius-button-radius: 0.625rem;
 
   /* layout variables team section */
@@ -82,7 +82,8 @@ body {
   --padding-sections-big: 48px;
   --padding-top-box-blue: 28px;
   --padding-box-blue: 36px;
-  --background-box-blue: rgba(180,167,195,0.9); /* light lilac */
+  --background-box-blue: rgba(180, 167, 195, 0.9);
+  /* light lilac */
   --border-radius-items: 18px;
   --background-square-separation: #112c50;
   --font-family-title: 'RecklessNeue', Georgia, 'Times New Roman', serif;
@@ -131,7 +132,7 @@ nav {
   margin: 0 auto;
   padding: 6rem 2rem;
   color: var(--text-on-dark);
-  z-index: 1; 
+  z-index: 1;
 }
 
 .highlight {
@@ -331,72 +332,73 @@ blockquote footer {
   font-weight: bold;
 }
 
-.team-grid{
-    margin-left: var(--margin-grid);
-    margin-right: var(--margin-grid);
-    padding-top: var(--padding-sections-big);
-    padding-bottom: var(--padding-sections-big);
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    position: relative;
+.team-grid {
+  margin-left: var(--margin-grid);
+  margin-right: var(--margin-grid);
+  padding-top: var(--padding-sections-big);
+  padding-bottom: var(--padding-sections-big);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  position: relative;
 
 }
 
-.team-left{
-    grid-column: 1 / 4;
-    grid-row: 1 / 2;
-    
+.team-left {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+
 }
 
-.team-right{
-    grid-column: 4 / 13;
-    grid-row: 1;
+.team-right {
+  grid-column: 4 / 13;
+  grid-row: 1;
 }
 
-.blue-square-team{
-    position: absolute;
-    width: 40px;
-    height: 5px; 
-    background-color: var(--background-square-separation); 
-    margin-bottom: 8px;
-    top:60px;
+.blue-square-team {
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background-color: var(--background-square-separation);
+  margin-bottom: 8px;
+  top: 60px;
 }
 
-.title-team{
-    font-family: var(--font-family-title);
-    font-size: var(--font-size-section-title);
-    font-weight: 100;
-    padding-bottom: var(--padding-sections-big);
+.title-team {
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-section-title);
+  font-weight: 100;
+  padding-bottom: var(--padding-sections-big);
 }
 
-.box-blue{
-    padding-top: var(--padding-top-box-blue);
-    padding-right: var(--padding-box-blue);
-    padding-left: var(--padding-box-blue);
-    padding-bottom: var(--padding-box-blue);
-    background-color: var(--background-box-blue);
-    border-radius: var(--border-radius-items);
+.box-blue {
+  padding-top: var(--padding-top-box-blue);
+  padding-right: var(--padding-box-blue);
+  padding-left: var(--padding-box-blue);
+  padding-bottom: var(--padding-box-blue);
+  background-color: var(--background-box-blue);
+  border-radius: var(--border-radius-items);
 }
 
 .text-box-team {
-    font-family: var(--font-family-text);
-    font-size: var(--font-size-p-inicio);
-    padding-bottom: var(--padding-separation-text-sections);
+  font-family: var(--font-family-text);
+  font-size: var(--font-size-p-inicio);
+  padding-bottom: var(--padding-separation-text-sections);
 }
 
-.title-card{
-    font-family: var(--font-family-title);
-    font-size: var(--font-size-p-inicio);
-    font-weight: 300;
+.title-card {
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-p-inicio);
+  font-weight: 300;
 }
 
-.text-card{
-    font-family: var(--font-family-text);
-    font-size: var(--font-size-p);
+.text-card {
+  font-family: var(--font-family-text);
+  font-size: var(--font-size-p);
 }
+
 /* Left column button and link */
-.btn-secondary{
+.btn-secondary {
   background: var(--auxiliary-acentos-1);
   color: #fff;
   border: none;
@@ -406,32 +408,33 @@ blockquote footer {
 }
 
 .btn-secondary .button-link-white,
-.button-link-white{
+.button-link-white {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
 }
 
 /* card styling inside the lilac box */
-.box-blue .text-box-team{
-  background: rgba(255,255,255,0.06);
+.box-blue .text-box-team {
+  background: rgba(255, 255, 255, 0.06);
   padding: 18px 20px;
   border-radius: 10px;
   margin-bottom: 24px;
 }
 
-.team-members .member{
+.team-members .member {
   text-align: left;
 }
 
-.team-members .member .title-card{
+.team-members .member .title-card {
   color: #1b2540;
   margin-top: 8px;
 }
 
-.team-members .member .text-card{
-  color: rgba(27,37,64,0.8);
+.team-members .member .text-card {
+  color: rgba(27, 37, 64, 0.8);
 }
+
 .consulta-gratuita {
   max-width: 1000px;
   margin: 4rem auto;
@@ -448,7 +451,7 @@ blockquote footer {
   font-size: var(--size-texto-destacado);
   margin-bottom: 3rem;
   max-width: 800px;
-  color: rgba(0,0,0,0.8);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .formulario-contacto {
@@ -469,14 +472,14 @@ blockquote footer {
   width: 100%;
   padding: 1rem;
   border: none;
-  background-color: rgba(180,167,195,0.2);
+  background-color: rgba(180, 167, 195, 0.2);
   border-radius: 8px;
   font-size: 1rem;
   color: #333;
 }
 
 .campo-entrada::placeholder {
-  color: rgba(0,0,0,0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .campo-entrada--area-texto {
@@ -538,7 +541,7 @@ blockquote footer {
 .ubicacion__direccion {
   font-family: var(--font-family-text);
   font-size: var(--font-size-p);
-  color: rgba(27,37,64,0.8);
+  color: rgba(27, 37, 64, 0.8);
   margin-bottom: 2rem;
   text-align: left;
 }
@@ -561,7 +564,7 @@ blockquote footer {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .ubicacion__mapa {
     height: 300px;
   }
@@ -780,6 +783,7 @@ blockquote footer {
     max-width: 300px;
     text-align: center;
     margin-right: 0;
+    margin-bottom: 1rem;
   }
 
   /* About section mobile */
@@ -848,6 +852,7 @@ blockquote footer {
   .btn-secondary {
     width: 100%;
     max-width: 200px;
+    margin-bottom: 1rem;
   }
 
   .team-members {
@@ -888,6 +893,7 @@ blockquote footer {
     justify-self: center;
     width: 100%;
     max-width: 200px;
+    margin-top: 1rem;
   }
 
   /* Location mobile */
