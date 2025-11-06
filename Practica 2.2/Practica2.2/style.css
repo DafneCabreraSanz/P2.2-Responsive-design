@@ -7,11 +7,11 @@
     --color-gris-medio: #e0e0e0;
     --color-texto: #333;
     --color-texto-oscuro: #000;
-    
+
     /* Fuentes */
     --fuente-titulo: 'TituloFont', 'Brush Script MT', cursive;
     --fuente-texto: sans-serif;
-    
+
     /* Tamaños de fuente */
     --font-size-pequeño: 0.85rem;
     --font-size-normal: 0.9rem;
@@ -20,7 +20,7 @@
     --font-size-titulo-movil: 2rem;
     --font-size-titulo-tablet: 2.5rem;
     --font-size-titulo-desktop: 2.5rem;
-    
+
     /* Espaciados */
     --gap-movil: 10px;
     --gap-tablet: 15px;
@@ -31,7 +31,7 @@
     --padding-texto-movil: 25px;
     --padding-texto-tablet: 30px;
     --padding-texto-desktop: 20px;
-    
+
     /* Alturas mínimas */
     --min-height-imagen-movil: 200px;
     --min-height-imagen-tablet: 220px;
@@ -39,13 +39,13 @@
     --min-height-texto-movil: 150px;
     --min-height-texto-tablet: 160px;
     --min-height-texto-desktop: 120px;
-    
+
     /* Alturas para imágenes cuadradas en desktop */
     --altura-cuadrada-desktop: 300px;
-    
+
     /* Transiciones */
     --transition-hover: 0.3s ease;
-    
+
     /* Breakpoints */
     --breakpoint-tablet: 768px;
     --breakpoint-desktop: 1024px;
@@ -272,11 +272,16 @@ body {
     }
 
     /* Imágenes cuadradas específicas con altura fija IGUAL */
-    .col-1-row-1 .subgrid .grid-item:first-child img,  /* Girasoles */
-    .col-2-row-1 .subgrid .grid-item:last-child img,   /* Montaña */
-    .col-3-row-1 .grid-item img,                       /* Océano y Pájaros */
-    .col-2-row-2 .grid-item:last-child img,            /* Montañero */
-    .col-3-row-2 .grid-item:last-child img {           /* Sombrero */
+    .col-1-row-1 .subgrid .grid-item:first-child img,
+    /* Girasoles */
+    .col-2-row-1 .subgrid .grid-item:last-child img,
+    /* Montaña */
+    .col-3-row-1 .grid-item img,
+    /* Océano y Pájaros */
+    .col-2-row-2 .grid-item:last-child img,
+    /* Montañero */
+    .col-3-row-2 .grid-item:last-child img {
+        /* Sombrero */
         height: var(--altura-cuadrada-desktop);
         min-height: var(--altura-cuadrada-desktop);
         max-height: var(--altura-cuadrada-desktop);
@@ -295,8 +300,8 @@ body {
         min-height: var(--min-height-texto-desktop);
         padding: var(--padding-texto-desktop);
     }
-a
-    .item-text .lorem {
+
+    a .item-text .lorem {
         font-size: var(--font-size-normal);
         margin-bottom: 10px;
     }
